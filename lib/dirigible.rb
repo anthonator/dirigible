@@ -12,6 +12,9 @@ require 'dirigible/connection'
 require 'dirigible/request'
 require 'dirigible/api'
 
+require 'dirigible/endpoint'
+require 'dirigible/push'
+
 module Dirigible
   extend Configuration
 
