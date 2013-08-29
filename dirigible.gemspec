@@ -19,7 +19,8 @@ Gem::Specification.new do |spec|
   spec.require_paths = ["lib"]
 
   # Runtime dependencies
-  spec.add_dependency "faraday",    "~> 0.8"
-  spec.add_dependency "hashie",     "~> 2.0"
-  spec.add_dependency "multi_json", "~> 1.7"
+  spec.add_dependency "faraday",            "~> 0.8"
+  spec.add_dependency "faraday_middleware", "~> 0.9"
+  spec.add_dependency "hashie",             "~> 2.0"
+  spec.add_dependency "multi_json",         "~> 1.7"
 end
