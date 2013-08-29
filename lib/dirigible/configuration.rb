@@ -2,7 +2,7 @@ module Dirigible
   module Configuration
     VALID_OPTION_KEYS = [
       :app_key,
-      :master_key,
+      :master_secret,
       :endpoint,
       :http_adapter,
       :proxy,
@@ -12,8 +12,8 @@ module Dirigible
     # By default, don't set app key.
     DEFAULT_APP_KEY = nil.freeze
 
-    # By default, don't set the master key.
-    DEFAULT_MASTER_KEY = nil.freeze
+    # By default, don't set the master secret.
+    DEFAULT_MASTER_SECRET = nil.freeze
 
     # The endpoint that will be used to authorize a user if none is set.
     DEFAULT_ENDPOINT = 'https://go.urbanairship.com/api'.freeze
@@ -52,7 +52,7 @@ module Dirigible
     # Reset all configuration options to default.
     def reset
       self.app_key = DEFAULT_APP_KEY
-      self.master_key = DEFAULT_MASTER_KEY
+      self.master_secret = DEFAULT_MASTER_SECRET
       self.endpoint = DEFAULT_ENDPOINT
       self.http_adapter = DEFAULT_HTTP_ADAPTER
       self.proxy = DEFAULT_PROXY
