@@ -6,6 +6,7 @@ require 'dirigible/version'
 
 require 'dirigible/configuration'
 require 'dirigible/connection'
+require 'dirigible/request'
 
 module Dirigible
   extend Configuration
