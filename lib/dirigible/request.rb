@@ -25,13 +25,14 @@ module Dirigible
       })
 
       response = connection.send(method) do |request|
-        request.url("#{endpoint}#{path}", options)
-        request.body = options
-        request.headers = headers
+        request.url("#{endpoint}#{path}/")
+        request.body = options.to_json
+        request.headers.merge!(headers)
       end
+
       Utils.handle_api_error(response) unless (200..399).include?(response.status)
 
-      Utils.parse_json(response.body)
+      Utils.parse_json(response.body) unless response.body == ''
     end
   end
 end
