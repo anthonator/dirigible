@@ -4,6 +4,7 @@ module Dirigible
       :app_key,
       :master_key,
       :endpoint,
+      :http_adapter,
       :proxy,
       :user_agent
     ]
@@ -16,6 +17,9 @@ module Dirigible
 
     # The endpoint that will be used to authorize a user if none is set.
     DEFAULT_ENDPOINT = 'https://go.urbanairship.com'.freeze
+
+    # The Faraday HTTP adapter to be used.
+    DEFAULT_HTTP_ADAPTER = :net_http
 
     # By default, don't set a proxy server.
     DEFAULT_PROXY = nil.freeze
@@ -50,6 +54,7 @@ module Dirigible
       self.app_key = DEFAULT_APP_KEY
       self.master_key = DEFAULT_MASTER_KEY
       self.endpoint = DEFAULT_ENDPOINT
+      self.http_adapter = DEFAULT_HTTP_ADAPTER
       self.proxy = DEFAULT_PROXY
       self.user_agent = DEFAULT_USER_AGENT
     end
