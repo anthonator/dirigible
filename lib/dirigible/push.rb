@@ -1,4 +1,4 @@
-class Dirigible::Push < Dirigible::Endpoint
+class Dirigible::Push
   # Send a push notification to a specified device or list
   # of devices. Must be one of:
   #
@@ -7,7 +7,7 @@ class Dirigible::Push < Dirigible::Endpoint
   #
   # @see http://docs.urbanairship.com/reference/api/v3/push.html#push
   def self.create(params)
-    new(Dirigible.post('/push', params))
+    Dirigible.post('/push', params)
   end
 
   # Accept the same range of payloads as /api/push, but parse
@@ -15,6 +15,6 @@ class Dirigible::Push < Dirigible::Endpoint
   #
   # @see http://docs.urbanairship.com/reference/api/v3/push.html#validate
   def self.validate(params)
-    new(Dirigible.post('/push/validate'))
+    Dirigible.post('/push/validate')
   end
 end
