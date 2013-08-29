@@ -12,8 +12,8 @@ require 'dirigible/connection'
 require 'dirigible/request'
 require 'dirigible/api'
 
-require 'dirigible/endpoint'
 require 'dirigible/push'
+require 'dirigible/schedule'
 
 module Dirigible
   extend Configuration
