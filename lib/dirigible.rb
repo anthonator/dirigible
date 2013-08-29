@@ -5,6 +5,7 @@ require 'multi_json'
 
 require 'dirigible/version'
 require 'dirigible/error'
+require 'dirigible/utils'
 
 require 'dirigible/configuration'
 require 'dirigible/connection'
