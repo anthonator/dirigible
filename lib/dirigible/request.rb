@@ -29,6 +29,9 @@ module Dirigible
         request.body = options
         request.headers = headers
       end
+      Utils.handle_api_error(response) unless (200..399).include?(response.status)
+
+      Utils.parse_json(response.body)
     end
   end
 end
