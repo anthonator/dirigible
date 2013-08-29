@@ -16,7 +16,7 @@ module Dirigible
     DEFAULT_MASTER_KEY = nil.freeze
 
     # The endpoint that will be used to authorize a user if none is set.
-    DEFAULT_ENDPOINT = 'https://go.urbanairship.com'.freeze
+    DEFAULT_ENDPOINT = 'https://go.urbanairship.com/api'.freeze
 
     # The Faraday HTTP adapter to be used.
     DEFAULT_HTTP_ADAPTER = Faraday.default_adapter
