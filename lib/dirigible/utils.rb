@@ -7,6 +7,7 @@ module Dirigible
       when 401 then Unauthorized.new
       when 404 then NotFound.new
       when 405 then MethodNotAllowed.new
+      when 406 then NotAcceptable.new
       else Error.new
       end
       error.error = parse_json(response.body)
