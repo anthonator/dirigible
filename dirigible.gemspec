@@ -8,9 +8,9 @@ Gem::Specification.new do |spec|
   spec.version       = Dirigible::VERSION
   spec.authors       = ["Anthony Smith"]
   spec.email         = ["anthony@sticksnleaves.com"]
-  spec.description   = %q{TODO: Write a gem description}
-  spec.summary       = %q{TODO: Write a gem summary}
-  spec.homepage      = ""
+  spec.description   = %q{An Urban Airship v3 API wrapper written in Ruby}
+  spec.summary       = %q{Urban Airship REST API client library for Ruby}
+  spec.homepage      = "https://github.com/anthonator/dirigible"
   spec.license       = "MIT"
 
   spec.files         = `git ls-files`.split($/)
@@ -18,6 +18,8 @@ Gem::Specification.new do |spec|
   spec.test_files    = spec.files.grep(%r{^(test|spec|features)/})
   spec.require_paths = ["lib"]
 
-  spec.add_development_dependency "bundler", "~> 1.3"
-  spec.add_development_dependency "rake"
+  # Runtime dependencies
+  spec.add_dependency "faraday",    "~> 0.8"
+  spec.add_dependency "hashie",     "~> 2.0"
+  spec.add_dependency "multi_json", "~> 1.7"
 end
