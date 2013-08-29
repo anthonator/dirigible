@@ -13,7 +13,4 @@ module Dirigible
 
   # Raised when Urban Airship returns HTTP status code 405
   class MethodNotAllowed < Error; end
-
-  # Raised when Urban Airship returns HTTP status code 5xx
-  class InternalError < Error; end
 end
