@@ -19,7 +19,7 @@ module Dirigible
     DEFAULT_ENDPOINT = 'https://go.urbanairship.com'.freeze
 
     # The Faraday HTTP adapter to be used.
-    DEFAULT_HTTP_ADAPTER = :net_http
+    DEFAULT_HTTP_ADAPTER = Faraday.default_adapter
 
     # By default, don't set a proxy server.
     DEFAULT_PROXY = nil.freeze
