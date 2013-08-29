@@ -4,6 +4,7 @@ require 'hashie'
 require 'multi_json'
 
 require 'dirigible/version'
+require 'dirigible/error'
 
 require 'dirigible/configuration'
 require 'dirigible/connection'
