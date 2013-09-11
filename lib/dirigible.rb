@@ -14,6 +14,7 @@ require 'dirigible/api'
 
 require 'dirigible/push'
 require 'dirigible/schedule'
+require 'dirigible/tag'
 
 module Dirigible
   extend Configuration
