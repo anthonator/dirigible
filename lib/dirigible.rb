@@ -17,6 +17,7 @@ require 'dirigible/schedule'
 require 'dirigible/tag'
 require 'dirigible/feed'
 require 'dirigible/device_information'
+require 'dirigible/device_registration'
 
 module Dirigible
   extend Configuration
