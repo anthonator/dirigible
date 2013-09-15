@@ -39,7 +39,7 @@ Make an API request...
 begin
   response = Dirigible::Push.create({
     audience: { device_token: "998BAD77A8347EFE7920F5367A4811C4385D526AE42C598A629A73B94EEDBAC8" },
-    notification: {alert: "Hello!" },
+    notification: { alert: "Hello!" },
     device_types: "all"
   })
 rescue Dirigible::Error => e
