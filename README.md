@@ -34,4 +34,4 @@ TODO: Write usage instructions here
 4. Push to the branch (`git push origin my-new-feature`)
 5. Create new Pull Request
 
-Made with fun by [![Sticksnleaves](http://sticksnleaves-wordpress.herokuapp.com/wp-content/themes/sticksnleaves/images/snl-logo-116x116.png)](http://www.sticksnleaves.com)
+Made with fun by [Sticksnleaves](http://www.sticksnleaves.com) in beautiful [Indianapolis](http://www.indymade.com)
