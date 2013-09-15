@@ -35,7 +35,7 @@ TODO: Write usage instructions here
 5. Create new Pull Request
 
 ## Credits
-[![Sticksnleaves](http://sticksnleaves-wordpress.herokuapp.com/wp-content/themes/sticksnleaves/images/snl-logo-116x116.png)(http://www.sticksnleaves.com)]
+[![Sticksnleaves](http://sticksnleaves-wordpress.herokuapp.com/wp-content/themes/sticksnleaves/images/snl-logo-116x116.png)](http://www.sticksnleaves.com)
 
 Dirigible is maintained and funded by [Sticksnleaves](http://www.sticksnleaves.com)
 
