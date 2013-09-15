@@ -4,7 +4,7 @@ A Ruby wrapper around the Urban Airship v3 API
 
 ## Documentation
 
-You can view detailed documentation of this library at [placeholder]. We tryto make sure that our documentation is up-to-date and thorough. However, we do recommend keeping the Urban Airship v3 API documentation handy.
+You can view detailed documentation of this library at [http://rdoc.info/github/anthonator/dirigible/master/frames]. We try to make sure that our documentation is up-to-date and thorough. However, we do recommend keeping the Urban Airship v3 API documentation handy.
 
 If you find any discrepency in our documentation please [file an issue](https://github.com/anthonator/dirigible/issues).
 
