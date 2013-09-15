@@ -1,6 +1,6 @@
 # Dirigible
 
-A Ruby wrapper around the Urban Airship v3 API
+A Ruby wrapper for the Urban Airship v3 API
 
 ## Documentation
 
