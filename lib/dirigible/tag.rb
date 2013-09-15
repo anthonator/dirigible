@@ -78,7 +78,7 @@ class Dirigible::Tag
   # section to apply the tags.
   #
   # @example Example request:
-  #   Dirigible:Tag.batch([
+  #   Dirigible::Tag.batch([
   #     {
   #       device_token: "device_token_tag_tag_1",
   #       tags: [
