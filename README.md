@@ -42,12 +42,11 @@ begin
     notification: { alert: "Hello!" },
     device_types: "all"
   })
+  puts "YAY!" if response[:ok] == true # All JSON responses are converted to hash's
 rescue Dirigible::Error => e
   puts "BUSTED!!!"
 end
 ```
-
-All responses are JSON converted to a hash.
 
 ## Contributing
 
