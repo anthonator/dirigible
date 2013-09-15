@@ -2,8 +2,8 @@ class Dirigible::Schedule
   # Scheduled notifications are created by POSTing to the
   # schedule URI. The body of the request must be one of:
   #
-  # * A single a [schedule object](http://docs.urbanairship.com/reference/api/v3/schedule.html#schedule-object).
-  # * An array of one or more [schedule objects](http://docs.urbanairship.com/reference/api/v3/schedule.html#schedule-object).
+  # * A single {http://docs.urbanairship.com/reference/api/v3/schedule.html#schedule-object schedule object}.
+  # * An array of one or more {http://docs.urbanairship.com/reference/api/v3/schedule.html#schedule-object schedule objects}.
   #
   # @see http://docs.urbanairship.com/reference/api/v3/schedule.html#schedule-a-notification
   def self.create(params)
