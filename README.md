@@ -22,9 +22,28 @@ Or install it yourself as:
 
     $ gem install dirigible
 
-## Usage
+## Getting Started
 
-TODO: Write usage instructions here
+Configure dirigible...
+
+```ruby
+Dirigible.configure do |config|
+  config.app_key = YOUR_APP_KEY
+  config.master_secret = YOUR_MASTER_SECRET
+end
+```
+
+Make an API request
+
+begin
+  Dirigible::Push.create({
+    audience: { device_token: "998BAD77A8347EFE7920F5367A4811C4385D526AE42C598A629A73B94EEDBAC8" },
+    notification: {alert: "Hello!" },
+    device_types: "all"
+  })
+rescue Dirigible::Error => e
+  puts "BUSTED!!!"
+end
 
 ## Contributing
 
