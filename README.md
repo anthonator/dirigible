@@ -35,6 +35,7 @@ end
 
 Make an API request
 
+```ruby
 begin
   Dirigible::Push.create({
     audience: { device_token: "998BAD77A8347EFE7920F5367A4811C4385D526AE42C598A629A73B94EEDBAC8" },
@@ -44,6 +45,7 @@ begin
 rescue Dirigible::Error => e
   puts "BUSTED!!!"
 end
+```
 
 ## Contributing
 
