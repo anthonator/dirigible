@@ -19,6 +19,7 @@ require 'dirigible/feed'
 require 'dirigible/device_information'
 require 'dirigible/device_registration'
 require 'dirigible/segment'
+require 'dirigible/location'
 
 module Dirigible
   extend Configuration
