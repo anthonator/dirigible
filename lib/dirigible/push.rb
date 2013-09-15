@@ -1,3 +1,4 @@
+# @see http://docs.urbanairship.com/reference/api/v3/push.html
 class Dirigible::Push
   # Send a push notification to a specified device or list
   # of devices. Must be one of:
