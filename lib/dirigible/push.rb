@@ -46,6 +46,6 @@ class Dirigible::Push
   #
   # @see http://docs.urbanairship.com/reference/api/v3/push.html#validate
   def self.validate(params)
-    Dirigible.post('/push/validate')
+    Dirigible.post('/push/validate', params)
   end
 end
