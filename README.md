@@ -64,6 +64,7 @@ Change the HTTP library used for making requests to Urban Airship. Since we use 
 
 ```ruby
 Dirigible.configure do |config|
+
   ...
   
   config.http_adapter = :excon
