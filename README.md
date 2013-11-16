@@ -2,6 +2,8 @@
 
 A Ruby wrapper for the Urban Airship v3 API
 
+[![Code Climate](https://codeclimate.com/github/anthonator/dirigible.png)](https://codeclimate.com/github/anthonator/dirigible)
+
 ## Documentation
 
 You can view detailed documentation of this library at http://rdoc.info/github/anthonator/dirigible/master/frames. We try to make sure that our documentation is up-to-date and thorough. However, we do recommend keeping the Urban Airship v3 API documentation handy.
