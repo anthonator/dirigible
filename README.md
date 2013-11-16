@@ -2,7 +2,7 @@
 
 A Ruby wrapper for the Urban Airship v3 API
 
-[![Code Climate](https://codeclimate.com/github/anthonator/dirigible.png)](https://codeclimate.com/github/anthonator/dirigible)
+[![Dependency Status](https://gemnasium.com/anthonator/dirigible.png)](https://gemnasium.com/anthonator/dirigible) [![Code Climate](https://codeclimate.com/github/anthonator/dirigible.png)](https://codeclimate.com/github/anthonator/dirigible)
 
 ## Documentation
 
