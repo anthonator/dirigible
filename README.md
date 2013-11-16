@@ -44,7 +44,7 @@ begin
   })
   puts "YAY!" if response[:ok] == true # All JSON responses are converted to hash's
 rescue Dirigible::Error => e
-  puts "BUSTED!!!"
+  puts "BUSTED!!! #{e.message}"
 end
 ```
 

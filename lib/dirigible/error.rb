@@ -1,6 +1,6 @@
 module Dirigible
   # Custom error class for rescuing from all known Urban Airship errors
-  class Error < StandardError; attr_accessor :error end
+  class Error < StandardError; end
 
   # Raised when Urban Airship returns HTTP status code 400
   class BadRequest < Error; end
