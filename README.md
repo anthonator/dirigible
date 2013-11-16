@@ -1,3 +1,4 @@
+<<<<<<< Local Changes
 # Dirigible
 
 A Ruby wrapper for the Urban Airship v3 API
@@ -22,7 +23,7 @@ Or install it yourself as:
 
     $ gem install dirigible
 
-## Getting Started
+## tl;dr
 
 Configure dirigible...
 
@@ -47,6 +48,91 @@ rescue Dirigible::Error => e
   puts "BUSTED!!! #{e.message}"
 end
 ```
+
+## Configuration
+
+In order to make any requests you must first configure your app key and master secret...
+
+```ruby
+Dirigible.configure do |config|
+  config.app_key = YOUR_APP_KEY
+  config.master_secret = YOUR_MASTER_SECRET
+end
+```
+
+Change the HTTP library used for making requests to Urban Airship. Since we use [Faraday](https://github.com/lostisland/faraday) you can use any supported adapter...
+
+```ruby
+Dirigible.configure do |config|
+  ...
+  
+  config.http_adapter = :excon
+end
+```
+
+## Supported Endpoints
+
+### Push
+
+* [Send a push notification](http://rdoc.info/github/anthonator/dirigible/master/Dirigible/Push.create)
+* [Validate a push notification](http://rdoc.info/github/anthonator/dirigible/master/Dirigible/Push.validate)
+
+### Schedule
+
+* [Schedule a notification](http://rdoc.info/github/anthonator/dirigible/master/Dirigible/Schedule.create)
+* [List schedules](http://rdoc.info/github/anthonator/dirigible/master/Dirigible/Schedule.list)
+* [List a specific schedule](http://rdoc.info/github/anthonator/dirigible/master/Dirigible/Schedule.get)
+* [Update a schedule](http://rdoc.info/github/anthonator/dirigible/master/Dirigible/Schedule.update)
+* [Delete a schedule](http://rdoc.info/github/anthonator/dirigible/master/Dirigible/Schedule.delete)
+
+### Tag
+
+* [List tags](http://rdoc.info/github/anthonator/dirigible/master/Dirigible/Tag.list)
+* [Create a tag](http://rdoc.info/github/anthonator/dirigible/master/Dirigible/Tag.create)
+* [Adding and removing devices from a tag](http://rdoc.info/github/anthonator/dirigible/master/Dirigible/Tag.add_or_remove)
+* [Delete a tag](http://rdoc.info/github/anthonator/dirigible/master/Dirigible/Tag.delete)
+* [Batch modification of tags](http://rdoc.info/github/anthonator/dirigible/master/Dirigible/Tag.batch)
+
+### Feed
+
+* [Create a feed](http://rdoc.info/github/anthonator/dirigible/master/Dirigible/Feed.create)
+* [Get feed details](http://rdoc.info/github/anthonator/dirigible/master/Dirigible/Feed.get)
+* [Update a feed](http://rdoc.info/github/anthonator/dirigible/master/Dirigible/Feed.update)
+* [Delete a feed](http://rdoc.info/github/anthonator/dirigible/master/Dirigible/Feed.delete)
+
+### Device Information
+
+* [Get Android APID device information](http://rdoc.info/github/anthonator/dirigible/master/Dirigible/DeviceInformation.get_apid)
+* [Get Backberry PIN device information](http://rdoc.info/github/anthonator/dirigible/master/Dirigible/DeviceInformation.get_device_pin)
+* [Get iOS device token information](http://rdoc.info/github/anthonator/dirigible/master/Dirigible/DeviceInformation.get_device_token)
+* [List Android APID's registered to an application](http://rdoc.info/github/anthonator/dirigible/master/Dirigible/DeviceInformation.list_apids)
+* [List Blackberry PIN's registered to an application](http://rdoc.info/github/anthonator/dirigible/master/Dirigible/DeviceInformation.list_device_pin)
+* [List iOS device tokens registered to an application](http://rdoc.info/github/anthonator/dirigible/master/Dirigible/DeviceInformation.list_device_token)
+* [List device tokens that can't recieve messages](http://rdoc.info/github/anthonator/dirigible/master/Dirigible/DeviceInformation.device_token_feedback)
+
+### Device Registration
+
+* [Register an Android APID](http://rdoc.info/github/anthonator/dirigible/master/Dirigible/DeviceRegistration.register_apid)
+* [Register a Blackberry PIN device](http://rdoc.info/github/anthonator/dirigible/master/Dirigible/DeviceRegistration.register_device_pin)
+* [Register an iOS device token](http://rdoc.info/github/anthonator/dirigible/master/Dirigible/DeviceRegistration.register_device_token)
+* [Delete a Blackberry PIN device](http://rdoc.info/github/anthonator/dirigible/master/Dirigible/DeviceRegistration.delete_device_pin)
+* [Delete an iOS device token](http://rdoc.info/github/anthonator/dirigible/master/Dirigible/DeviceRegistration.delete_device_token)
+
+### Segment
+
+* [List all segments for an application](http://rdoc.info/github/anthonator/dirigible/master/Dirigible/Segment.list)
+* [Create a segment](http://rdoc.info/github/anthonator/dirigible/master/Dirigible/Segment.create)
+* [Get a specific segment](http://rdoc.info/github/anthonator/dirigible/master/Dirigible/Segment.get)
+* [Update a segment](http://rdoc.info/github/anthonator/dirigible/master/Dirigible/Segment.update)
+* [Delete a segment](http://rdoc.info/github/anthonator/dirigible/master/Dirigible/Segment.delete)
+
+### Location
+
+* [Retrieve cutoff dates](http://rdoc.info/github/anthonator/dirigible/master/Dirigible/Location.cutoff_dates)
+* [Look up location boundary information](http://rdoc.info/github/anthonator/dirigible/master/Dirigible/Location.from_alias)
+* [Search for locations using a bounding box](http://rdoc.info/github/anthonator/dirigible/master/Dirigible/Location.search_by_bounding_box)
+* [Search for a location by latitude and longitude](http://rdoc.info/github/anthonator/dirigible/master/Dirigible/Location.search_by_latlng)
+* [Search for a location boundary by name](http://rdoc.info/github/anthonator/dirigible/master/Dirigible/Location.search_by_name)
 
 ## Contributing
 

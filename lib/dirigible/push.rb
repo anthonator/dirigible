@@ -3,8 +3,8 @@ class Dirigible::Push
   # Send a push notification to a specified device or list
   # of devices. Must be one of:
   #
-  # * A single [Push Object](http://docs.urbanairship.com/reference/api/v3/push.html#push-object)
-  # * An array of one or more [Push Objects](http://docs.urbanairship.com/reference/api/v3/push.html#push-object)
+  # * A single {http://docs.urbanairship.com/reference/api/v3/push.html#push-object Push Object}
+  # * An array of one or more {http://docs.urbanairship.com/reference/api/v3/push.html#push-object Push Object}
   #
   # @example Example request:
   #   Dirigible::Push.create({
