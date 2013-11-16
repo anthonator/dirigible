@@ -1,4 +1,3 @@
-<<<<<<< Local Changes
 # Dirigible
 
 A Ruby wrapper for the Urban Airship v3 API
