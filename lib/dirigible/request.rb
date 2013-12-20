@@ -26,7 +26,13 @@ module Dirigible
 
       response = connection.send(method) do |request|
         request.url("#{endpoint}#{path}/")
-        request.body = options.to_json
+
+        if [:post, :put].member?(method)
+          request.body = options.to_json
+        else
+          request.params.merge!(options)
+        end
+
         request.headers.merge!(headers)
       end
 
