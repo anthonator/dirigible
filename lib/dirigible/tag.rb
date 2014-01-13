@@ -7,7 +7,7 @@ class Dirigible::Tag
   #
   # @see http://docs.urbanairship.com/reference/api/v3/tags.html#tag-listing
   def self.list
-    Dirigible.get('/tags')
+    Dirigible.get('/tags/')
   end
 
   # Explicitly create a tag with no devices associated with
