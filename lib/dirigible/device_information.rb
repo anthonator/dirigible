@@ -72,6 +72,6 @@ class Dirigible::DeviceInformation
   #
   # @see http://docs.urbanairship.com/reference/api/v3/device_information.html#feedback
   def self.device_token_feedback(since)
-    Dirigible.get("/device_tokens/feedback", { since: since })
+    Dirigible.get("/device_tokens/feedback/", { since: since })
   end
 end

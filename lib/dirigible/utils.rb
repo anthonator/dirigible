@@ -2,7 +2,7 @@ module Dirigible
   # @private
   module Utils
     def self.handle_api_error(response)
-      message = parse_message(response)
+
 
       klass = case response.status
         when 400 then BadRequest
@@ -13,7 +13,10 @@ module Dirigible
         else Error
       end
 
-      raise klass.new(message)
+      err = klass.new(response.body)
+      err.parsed = parse_message(response)
+      raise err
+
     end
 
     def self.parse_json(json)
