@@ -21,11 +21,11 @@ module Dirigible
     def request(method, path, options, headers)
       headers.merge!({
         'User-Agent' => user_agent,
-        'Accept' => 'application/vnd.urbanairship+json; version=3;',
+        'Accept' => 'application/vnd.urbanairship+json; version=3;'
       })
 
       response = connection.send(method) do |request|
-        request.url("#{endpoint}#{path}/")
+        request.url("#{endpoint}#{path}")
 
         if [:post, :put].member?(method)
           request.body = options.to_json
@@ -38,7 +38,7 @@ module Dirigible
 
       Utils.handle_api_error(response) unless (200..399).include?(response.status)
 
-      Utils.parse_json(response.body) unless response.body == ''
+      Utils.parse_message(response) unless response.body == ''
     end
   end
 end

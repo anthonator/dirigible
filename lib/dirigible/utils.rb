@@ -2,7 +2,7 @@ module Dirigible
   # @private
   module Utils
     def self.handle_api_error(response)
-      message = parse_json(response.body)
+
 
       klass = case response.status
         when 400 then BadRequest
@@ -13,11 +13,25 @@ module Dirigible
         else Error
       end
 
-      raise klass.new(message)
+      err = klass.new(response.body)
+      err.parsed = parse_message(response)
+      raise err
+
     end
 
     def self.parse_json(json)
       MultiJson.load(json, symbolize_keys: true)
+    end
+
+    def self.parse_message(response)
+      #UA docs/behaviour doesn't seem consistent enough to help us here.
+      #the headers can lie, and this was a verified bug.
+      #just try to treat body as JSON and if that fails, return body
+      begin
+        parse_json(response.body)
+      rescue
+        response.body
+      end
     end
   end
 end
