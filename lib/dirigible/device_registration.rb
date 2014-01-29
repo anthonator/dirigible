@@ -44,8 +44,8 @@ class Dirigible::DeviceRegistration
   #   })
   #
   # @see http://docs.urbanairship.com/reference/api/v3/registration.html#apid-registration
-  def self.register_apid(id, params)
-    Dirigible.put("/apids/#{id}", params)
+  def self.register_apid(id, options = {})
+    Dirigible.put("/apids/#{id}", options)
   end
 
   # Register this PIN with this application. This will mark
