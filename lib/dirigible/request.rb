@@ -38,7 +38,7 @@ module Dirigible
 
       Utils.handle_api_error(response) unless (200..399).include?(response.status)
 
-      Utils.parse_message(response.body)
+      Utils.parse_message(response)
     end
   end
 end
