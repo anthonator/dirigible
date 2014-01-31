@@ -31,6 +31,18 @@ class Dirigible::DeviceInformation
     Dirigible.get("/device_pins/#{id}")
   end
 
+  # Count iOS device tokens registered to this application
+  #
+  # @example Example request:
+  #   Dirigible::DeviceInformation.count_device_tokens[:device_tokens_count]
+  #   Dirigible::DeviceInformation.count_device_tokens[:active_device_tokens_count]
+  #
+  # @see http://docs.urbanairship.com/reference/api/v3/device_information.html#device-listing
+  def self.count_device_tokens
+    Dirigible.get("/device_tokens/count")
+  end
+
+
   # Fetch iOS device tokens registered to this application
   # and associated metadata.
   #
