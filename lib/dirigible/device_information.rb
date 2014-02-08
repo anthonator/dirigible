@@ -38,8 +38,8 @@ class Dirigible::DeviceInformation
   #   Dirigible::DeviceInformation.list_device_tokens
   #
   # @see http://docs.urbanairship.com/reference/api/v3/device_information.html#device-listing
-  def self.list_device_tokens
-    Dirigible.get('/device_tokens')
+  def self.list_device_tokens(options = {})
+    List.new(Dirigible.get('/device_tokens', params))
   end
 
   # Fetch Android APIDs registered to this application and
@@ -49,8 +49,8 @@ class Dirigible::DeviceInformation
   #   Dirigible::DeviceInformation.list_apids
   #
   # @see http://docs.urbanairship.com/reference/api/v3/device_information.html#device-listing
-  def self.list_apids
-    Dirigible.get('/apids')
+  def self.list_apids(options = {})
+    List.new(Dirigible.get('/apids', params))
   end
 
   # Fetch BlackBerry PINs registered to this application and
@@ -60,8 +60,8 @@ class Dirigible::DeviceInformation
   #   Dirigible::DeviceInformation.list_device_pins
   #
   # @see http://docs.urbanairship.com/reference/api/v3/device_information.html#device-listing
-  def self.list_device_pins
-    Dirigible.get('/device_pins')
+  def self.list_device_pins(options = {})
+    List.new(Dirigible.get('/device_pins', params))
   end
 
   # Fetch device tokens that can't recieve messages because
@@ -73,5 +73,26 @@ class Dirigible::DeviceInformation
   # @see http://docs.urbanairship.com/reference/api/v3/device_information.html#feedback
   def self.device_token_feedback(since)
     Dirigible.get("/device_tokens/feedback", { since: since })
+  end
+  
+  class List
+    def initialize(response)
+      @response = response
+    end
+    
+    def [](value)
+      @response[value]
+    end
+    
+    # Fetch the next page for this device listing. Returns
+    # nil if next_page is nil.
+    def next_page(params = {})
+      return nil if @response[:next_page].nil?
+      uri = URI.parse(@response[:next_page])
+      path = "/#{uri.path.gsub(/\/api|\//, '')}"
+      # Shew! Need to simplify this!
+      params = (CGI.parse(uri.query).map{ |k,v| { k => v[0] } }.reduce({}) { |h,pairs| pairs.each { |k,v| (h[k.to_sym] = v) }; h }).merge!(params)
+      List.new(Dirigible.get(path, params))
+    end
   end
 end
