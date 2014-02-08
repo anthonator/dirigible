@@ -38,7 +38,7 @@ class Dirigible::DeviceInformation
   #   Dirigible::DeviceInformation.list_device_tokens
   #
   # @see http://docs.urbanairship.com/reference/api/v3/device_information.html#device-listing
-  def self.list_device_tokens(params = {})
+  def self.list_device_tokens(options = {})
     List.new(Dirigible.get('/device_tokens', params))
   end
 
@@ -49,7 +49,7 @@ class Dirigible::DeviceInformation
   #   Dirigible::DeviceInformation.list_apids
   #
   # @see http://docs.urbanairship.com/reference/api/v3/device_information.html#device-listing
-  def self.list_apids(params = {})
+  def self.list_apids(options = {})
     List.new(Dirigible.get('/apids', params))
   end
 
@@ -60,7 +60,7 @@ class Dirigible::DeviceInformation
   #   Dirigible::DeviceInformation.list_device_pins
   #
   # @see http://docs.urbanairship.com/reference/api/v3/device_information.html#device-listing
-  def self.list_device_pins(params = {})
+  def self.list_device_pins(options = {})
     List.new(Dirigible.get('/device_pins', params))
   end
 
