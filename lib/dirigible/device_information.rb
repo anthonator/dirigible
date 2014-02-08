@@ -38,8 +38,8 @@ class Dirigible::DeviceInformation
   #   Dirigible::DeviceInformation.list_device_tokens
   #
   # @see http://docs.urbanairship.com/reference/api/v3/device_information.html#device-listing
-  def self.list_device_tokens
-    List.new(Dirigible.get('/device_tokens'))
+  def self.list_device_tokens(params = {})
+    List.new(Dirigible.get('/device_tokens', params))
   end
 
   # Fetch Android APIDs registered to this application and
@@ -49,8 +49,8 @@ class Dirigible::DeviceInformation
   #   Dirigible::DeviceInformation.list_apids
   #
   # @see http://docs.urbanairship.com/reference/api/v3/device_information.html#device-listing
-  def self.list_apids
-    List.new(Dirigible.get('/apids'))
+  def self.list_apids(params = {})
+    List.new(Dirigible.get('/apids', params))
   end
 
   # Fetch BlackBerry PINs registered to this application and
@@ -60,8 +60,8 @@ class Dirigible::DeviceInformation
   #   Dirigible::DeviceInformation.list_device_pins
   #
   # @see http://docs.urbanairship.com/reference/api/v3/device_information.html#device-listing
-  def self.list_device_pins
-    List.new(Dirigible.get('/device_pins'))
+  def self.list_device_pins(params = {})
+    List.new(Dirigible.get('/device_pins', params))
   end
 
   # Fetch device tokens that can't recieve messages because
@@ -86,11 +86,12 @@ class Dirigible::DeviceInformation
     
     # Fetch the next page for this device listing. Returns
     # nil if next_page is nil.
-    def next_page
+    def next_page(params = {})
       return nil if @response[:next_page].nil?
       uri = URI.parse(@response[:next_page])
       path = "/#{uri.path.gsub(/\/api|\//, '')}"
-      params = CGI.parse(uri.query)
+      # Shew! Need to simplify this!
+      params = (CGI.parse(uri.query).map{ |k,v| { k => v[0] } }.reduce({}) { |h,pairs| pairs.each { |k,v| (h[k.to_sym] = v) }; h }).merge!(params)
       List.new(Dirigible.get(path, params))
     end
   end
