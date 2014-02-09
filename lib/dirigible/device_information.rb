@@ -50,12 +50,13 @@ class Dirigible::DeviceInformation
   #   Dirigible::DeviceInformation.list_device_tokens
   #
   # @example Request next page:
-  #   device_tokens = Dirigible::DeviceInformation.list_device_tokens
-  #   more_device_tokens = device_tokens.next_page
+  #   response = Dirigible::DeviceInformation.list_device_tokens
+  #   device_tokens = response[:device_tokens]
+  #   more_device_tokens = response.next_page[:device_tokens]
   #
   # @see http://docs.urbanairship.com/reference/api/v3/device_information.html#device-listing
   def self.list_device_tokens(options = {})
-    List.new(Dirigible.get('/device_tokens', params))
+    List.new(Dirigible.get('/device_tokens', options))
   end
 
   # Fetch Android APIDs registered to this application and
@@ -65,12 +66,13 @@ class Dirigible::DeviceInformation
   #   Dirigible::DeviceInformation.list_apids
   #
   # @example Request next page:
-  #   apids = Dirigible::DeviceInformation.list_apids
-  #   more_apids = apids.next_page
+  #   response = Dirigible::DeviceInformation.list_apids
+  #   apids = response[:apids]
+  #   more_apids = response.next_page[:apids]
   #
   # @see http://docs.urbanairship.com/reference/api/v3/device_information.html#device-listing
   def self.list_apids(options = {})
-    List.new(Dirigible.get('/apids', params))
+    List.new(Dirigible.get('/apids', options))
   end
 
   # Fetch BlackBerry PINs registered to this application and
@@ -80,12 +82,13 @@ class Dirigible::DeviceInformation
   #   Dirigible::DeviceInformation.list_device_pins
   #
   # @example Request next page:
-  #   device_pins = Dirigible::DeviceInformation.list_device_pins
-  #   more_device_pins = device_pins.next_page
+  #   response = Dirigible::DeviceInformation.list_device_pins
+  #   device_pins = response[:device_pins]
+  #   more_device_pins = response.next_page[:device_pins]
   #
   # @see http://docs.urbanairship.com/reference/api/v3/device_information.html#device-listing
   def self.list_device_pins(options = {})
-    List.new(Dirigible.get('/device_pins', params))
+    List.new(Dirigible.get('/device_pins', options))
   end
 
   # Fetch device tokens that can't recieve messages because
@@ -98,24 +101,25 @@ class Dirigible::DeviceInformation
   def self.device_token_feedback(since)
     Dirigible.get("/device_tokens/feedback", { since: since })
   end
-  
+
   class List
     def initialize(response)
       @response = response
     end
-    
+
     def [](value)
       @response[value]
     end
-    
+
     # Fetch the next page for this device listing. Returns
     # nil if next_page is nil.
-    def next_page(params = {})
+    def next_page()
       return nil if @response[:next_page].nil?
       uri = URI.parse(@response[:next_page])
-      path = "/#{uri.path.gsub(/\/api|\//, '')}"
-      # Shew! Need to simplify this!
-      params = (CGI.parse(uri.query).map{ |k,v| { k => v[0] } }.reduce({}) { |h,pairs| pairs.each { |k,v| (h[k.to_sym] = v) }; h }).merge!(params)
+      path = "/#{uri.path.gsub('/api/', '')}"
+
+      params = Rack::Utils.parse_nested_query(uri.query).symbolize_keys!
+
       List.new(Dirigible.get(path, params))
     end
   end
