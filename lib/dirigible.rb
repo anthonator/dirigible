@@ -1,6 +1,5 @@
 require 'faraday'
 require 'faraday_middleware'
-require 'hashie'
 require 'multi_json'
 
 require 'dirigible/version'
