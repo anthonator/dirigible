@@ -108,9 +108,10 @@ end
 * [Get Backberry PIN device information](http://rdoc.info/github/anthonator/dirigible/master/Dirigible/DeviceInformation.get_device_pin)
 * [Get iOS device token information](http://rdoc.info/github/anthonator/dirigible/master/Dirigible/DeviceInformation.get_device_token)
 * [List Android APID's registered to an application](http://rdoc.info/github/anthonator/dirigible/master/Dirigible/DeviceInformation.list_apids)
-* [List Blackberry PIN's registered to an application](http://rdoc.info/github/anthonator/dirigible/master/Dirigible/DeviceInformation.list_device_pin)
-* [List iOS device tokens registered to an application](http://rdoc.info/github/anthonator/dirigible/master/Dirigible/DeviceInformation.list_device_token)
-* [List device tokens that can't recieve messages](http://rdoc.info/github/anthonator/dirigible/master/Dirigible/DeviceInformation.device_token_feedback)
+* [List Blackberry PIN's registered to an application](http://rdoc.info/github/anthonator/dirigible/master/Dirigible/DeviceInformation.list_device_pins)
+* [Count iOS device tokens registered to an application](http://rdoc.info/github/anthonator/dirigible/master/Dirigible/DeviceInformation.count_device_tokens)
+* [List iOS device tokens registered to an application](http://rdoc.info/github/anthonator/dirigible/master/Dirigible/DeviceInformation.list_device_tokens)
+* [List iOS device tokens that can't recieve messages](http://rdoc.info/github/anthonator/dirigible/master/Dirigible/DeviceInformation.device_token_feedback)
 
 ### Device Registration
 
