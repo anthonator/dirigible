@@ -10,6 +10,7 @@ module Dirigible
         when 404 then NotFound
         when 405 then MethodNotAllowed
         when 406 then NotAcceptable
+        when 503 then ServiceUnavailable
         else Error
       end
 

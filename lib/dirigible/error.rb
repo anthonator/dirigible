@@ -16,4 +16,7 @@ module Dirigible
 
   # Raised when Urban Airship returns HTTP status code 406
   class NotAcceptable < Error; end
+
+  # Raised when Urban Airship returns HTTP status code 503
+  class ServiceUnavailable < Error; end
 end
