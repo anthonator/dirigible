@@ -10,7 +10,7 @@ class Dirigible::Location
   #
   # @see http://docs.urbanairship.com/reference/api/v3/location.html#location-boundary-information
   def self.search_by_name(query, boundary_type = nil)
-    Dirigible.get('/location', { q: query, type: boundary_type })
+    Dirigible.get('/location/', { q: query, type: boundary_type })
   end
 
   # Search for a location by latitude and longitude.
@@ -60,6 +60,6 @@ class Dirigible::Location
   #
   # @see http://docs.urbanairship.com/reference/api/v3/location.html#location-data-ranges
   def self.cutoff_dates
-    Dirigible.get("/segments/dates")
+    Dirigible.get("/segments/dates/")
   end
 end

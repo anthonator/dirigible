@@ -7,7 +7,7 @@ class Dirigible::Segment
   #
   # @see http://docs.urbanairship.com/reference/api/v3/segments.html#segments-information
   def self.list
-    Dirigible.get('/segments')
+    Dirigible.get('/segments/')
   end
 
   # Fetch information about a particular segment.
@@ -35,7 +35,7 @@ class Dirigible::Segment
   #
   # @see http://docs.urbanairship.com/reference/api/v3/segments.html#segment-creation
   def self.create(params)
-    Dirigible.post('/segments', params)
+    Dirigible.post('/segments/', params)
   end
 
   # Change the definition of the segment.

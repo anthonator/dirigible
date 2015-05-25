@@ -39,7 +39,7 @@ class Dirigible::DeviceInformation
   #
   # @see http://docs.urbanairship.com/reference/api/v3/device_information.html#device-listing
   def self.count_device_tokens
-    Dirigible.get("/device_tokens/count")
+    Dirigible.get("/device_tokens/count/")
   end
 
 
@@ -55,7 +55,7 @@ class Dirigible::DeviceInformation
   #
   # @see http://docs.urbanairship.com/reference/api/v3/device_information.html#device-listing
   def self.list_device_tokens(options = {})
-    List.new(Dirigible.get('/device_tokens', options))
+    List.new(Dirigible.get('/device_tokens/', options))
   end
 
   # Fetch Android APIDs registered to this application and
@@ -70,7 +70,7 @@ class Dirigible::DeviceInformation
   #
   # @see http://docs.urbanairship.com/reference/api/v3/device_information.html#device-listing
   def self.list_apids(options = {})
-    List.new(Dirigible.get('/apids', options))
+    List.new(Dirigible.get('/apids/', options))
   end
 
   # Fetch BlackBerry PINs registered to this application and
@@ -85,7 +85,7 @@ class Dirigible::DeviceInformation
   #
   # @see http://docs.urbanairship.com/reference/api/v3/device_information.html#device-listing
   def self.list_device_pins(options = {})
-    List.new(Dirigible.get('/device_pins', options))
+    List.new(Dirigible.get('/device_pins/', options))
   end
 
   # Fetch device tokens that can't recieve messages because
@@ -96,7 +96,7 @@ class Dirigible::DeviceInformation
   #
   # @see http://docs.urbanairship.com/reference/api/v3/device_information.html#feedback
   def self.device_token_feedback(since)
-    Dirigible.get("/device_tokens/feedback", { since: since })
+    Dirigible.get("/device_tokens/feedback/", { since: since })
   end
   
   class List

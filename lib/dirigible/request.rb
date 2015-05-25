@@ -21,11 +21,11 @@ module Dirigible
     def request(method, path, options, headers)
       headers.merge!({
         'User-Agent' => user_agent,
-        'Accept' => 'application/vnd.urbanairship+json; version=3;',
+        'Accept' => 'application/vnd.urbanairship+json; version=3;'
       })
 
       response = connection.send(method) do |request|
-        request.url("#{endpoint}#{path}/")
+        request.url("#{endpoint}#{path}")
 
         if [:post, :put].member?(method)
           request.body = options.to_json

@@ -7,7 +7,7 @@ class Dirigible::Tag
   #
   # @see http://docs.urbanairship.com/reference/api/v3/tags.html#tag-listing
   def self.list
-    Dirigible.get('/tags')
+    Dirigible.get('/tags/')
   end
 
   # Explicitly create a tag with no devices associated with
@@ -107,6 +107,6 @@ class Dirigible::Tag
   #
   # @see http://docs.urbanairship.com/reference/api/v3/tags.html#batch-modification-of-tags
   def self.batch(params)
-    Dirigible.post("/tags/batch", params)
+    Dirigible.post("/tags/batch/", params)
   end
 end

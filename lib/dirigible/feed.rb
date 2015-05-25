@@ -17,7 +17,7 @@ class Dirigible::Feed
   #
   # @see http://docs.urbanairship.com/reference/api/v3/feeds.html#creating-a-new-feed
   def self.create(params)
-    Dirigible.post('/feeds', params)
+    Dirigible.post('/feeds/', params)
   end
 
   # Returns information about that particular feed.
