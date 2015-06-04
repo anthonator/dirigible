@@ -15,7 +15,7 @@ class Dirigible::Push
   #
   # @see http://docs.urbanairship.com/reference/api/v3/push.html#push
   def self.create(params)
-    Dirigible.post('/push', params)
+    Dirigible.post('/push/', params)
   end
 
   # Accept the same range of payloads as /api/push, but parse

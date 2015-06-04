@@ -19,7 +19,7 @@ class Dirigible::Schedule
   #
   # @see http://docs.urbanairship.com/reference/api/v3/schedule.html#schedule-a-notification
   def self.create(params)
-    Dirigible.post('/schedules', params)
+    Dirigible.post('/schedules/', params)
   end
 
   # List all existing schedules. Returns an array of schedule
@@ -30,7 +30,7 @@ class Dirigible::Schedule
   #
   # @see http://docs.urbanairship.com/reference/api/v3/schedule.html#list-schedules
   def self.list
-    Dirigible.get('/schedules')
+    Dirigible.get('/schedules/')
   end
 
   # Fetch the current definition of a single schedule
